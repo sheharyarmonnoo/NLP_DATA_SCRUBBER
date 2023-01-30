@@ -26,12 +26,13 @@ vendor_patterns = [
 
 # Example usage
 text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
+  
 print(classify_vendors(text))  
 
-# Output: ['Starbucks', 'Apple']
+Output: ['Starbucks', 'Apple']
 
 
-Conclusion
+# Conclusion
 This NLP data scrubber model can be useful for businesses and organizations that need to process large amounts of text data such as credit card transactions, invoices, or transcribed dialog phone conversations. Some examples of businesses that can benefit from this model include:
 
 - Financial institutions (e.g. banks, credit card companies)
