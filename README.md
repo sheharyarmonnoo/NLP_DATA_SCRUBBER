@@ -14,21 +14,23 @@ spaCy is a popular natural language processing (NLP) library in Python.
 #### Libraries Used
 spacy  & re (regex)  
 
-#### Load the spacy model
-nlp = spacy.load("en_core_web_sm")
+#### Loading the spacy model
+spacy.load("en_core_web_sm")
+
+"en_core_web_sm" stands for "English Core Web Small". 
+
+- The "Core" part refers to the fact that it's a basic model that covers the most common NLP tasks, such as tokenization, part-of-speech (POS) tagging, and named entity recognition (NER). 
+- The "Web" part refers to the fact that it was trained on a diverse mix of web-based text. The "Small" part refers to its size, which is relatively compact compared to other spaCy models. 
+- The "sm" model is a smaller and faster version of the full spaCy English model. It is a good choice for projects that require NLP capabilities, but have limited computational resources.  
+
+
 
 #### Defining vendor patterns
-vendor_patterns = [
-    [{"LOWER": "amazon"},{"IS_DIGIT": True}],
-    [{"LOWER": "starbucks"},{"IS_DIGIT": True}],
-    [{"LOWER": "apple"},{"IS_DIGIT": True}]
-    ]
+[[{"LOWER": "amazon"},{"IS_DIGIT": True}], [{"LOWER": "starbucks"},{"IS_DIGIT": True}], [{"LOWER": "apple"},{"IS_DIGIT": True}] ]
 
 #### Example usage
-text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
+"I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
   
-print(classify_vendors(text))  
-
 Output: ['Starbucks', 'Apple']
 
 
