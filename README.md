@@ -49,7 +49,7 @@ spacy.load("en_core_web_sm")
     
 ]
 
-We user amazoncom over amazon.com in the pattern since we will pre-process the input text to remove special characters 
+Above are all the patterns defined one may expect for AMAZON as a vendors. We also use amazoncom over amazon.com in the pattern since we will pre-process the input text to remove special characters and the entity_ruler will not be able to find it. 
 
 ## Conclusion
 This NLP data scrubber model can be useful for businesses and organizations that need to process large amounts of text data such as credit card transactions, invoices, or transcribed dialog phone conversations. Some examples of businesses that can benefit from this model include:
