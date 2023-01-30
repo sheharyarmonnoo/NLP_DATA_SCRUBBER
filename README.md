@@ -26,7 +26,7 @@ spacy.load("en_core_web_sm")
 
 
 #### Defining vendor patterns
-[[{"LOWER": "amazon"},{"IS_DIGIT": True}], [{"LOWER": "starbucks"},{"IS_DIGIT": True}], [{"LOWER": "apple"},{"IS_DIGIT": True}] ]
+[[{"LOWER": "amazon"},{"IS_DIGIT": False}], [{"LOWER": "starbucks"},{"IS_DIGIT": False}], [{"LOWER": "apple"},{"IS_DIGIT": False}] ]
 
 #### Example usage
 "I bought a coffee from Starbucks on 13th Street and an iPhone from Apple down at Yale and Harvard"  
