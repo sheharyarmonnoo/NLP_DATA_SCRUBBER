@@ -4,7 +4,7 @@ This is an NLP data scrubber model built using the spacy library to classify ven
 
 ## Why use spaCy?
 
-spaCy has a powerful matching library called the matcher that can be used to match specific patterns in text, making it suitable for the task of classifying vendors from text. 
+spaCy is a popular natural language processing (NLP) library in Python. 
 
 - It provides fast and efficient tools for NLP tasks such as tokenization, POS tagging, and NER.
 - It has a powerful matching library called the matcher, suitable for classifying vendors from text.
