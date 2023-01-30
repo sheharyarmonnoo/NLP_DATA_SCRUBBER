@@ -27,13 +27,28 @@ spacy.load("en_core_web_sm")
 
 
 
-#### Defining vendor patterns
-[[{"LOWER": "amazon"},{"IS_DIGIT": False}], [{"LOWER": "starbucks"},{"IS_DIGIT": False}], [{"LOWER": "apple"},{"IS_DIGIT": False}] ]
+#### Defining vendor patterns example (Amazon)
+[  
+    
+    {"label":"AMAZON", "pattern": [{"LOWER":"amazoncom"}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amazoncom^\d.?\d*.?\d*)"}}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amazoncom"}, {"TEXT":{"REGEX":r"(^amazon.com\d.?\d*.?\d*)"}}] },
+    
+    {"label":"AMAZON", "pattern": [{"LOWER":"amzncom"}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amzncom^\d.?\d*.?\d*)"}}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amzncom"}, {"TEXT":{"REGEX":r"(^amzn.com\d.?\d*.?\d*)"}}] },
+    
+    {"label":"AMAZON", "pattern": [{"LOWER":"amzn"}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amzn^\d.?\d*.?\d*)"}}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amzn"}, {"TEXT":{"REGEX":r"(^amzn\d.?\d*.?\d*)"}}] },
+    
+        
+    {"label":"AMAZON", "pattern": [{"LOWER":"amazon"}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amazon^\d.?\d*.?\d*)"}}]},
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amazon"}, {"TEXT":{"REGEX":r"(^amazon\d.?\d*.?\d*)"}}] }    
+    
+]  
 
-#### Example usage
-"I bought a coffee from Starbucks on 13th Street and an iPhone from Apple down at Yale and Harvard"  
-  
-Output: ['Starbucks', 'Apple']
 
 
 ## Conclusion
