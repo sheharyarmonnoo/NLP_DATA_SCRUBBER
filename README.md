@@ -2,7 +2,7 @@
 Introduction
 This is an NLP data scrubber model built using the spacy library to classify vendors from large groups of text such as credit card transactions, invoices, or transcribed dialog phone conversations. The result is derived from using the matcher library in spacy. The text is labeled after preliminary regex to remove special characters, etc.
 
-## Why use spaCy?
+## Why spaCy?
 
 spaCy is a popular natural language processing (NLP) library in Python. 
 
@@ -11,20 +11,20 @@ spaCy is a popular natural language processing (NLP) library in Python.
 - It has a powerful matching library called the matcher, suitable for classifying vendors from text.
 
 
-### Libraries Used
+#### Libraries Used
 spacy  & re (regex)  
 
-### Load the spacy model
+#### Load the spacy model
 nlp = spacy.load("en_core_web_sm")
 
-### Defining vendor patterns
+#### Defining vendor patterns
 vendor_patterns = [
     [{"LOWER": "amazon"},{"IS_DIGIT": True}],
     [{"LOWER": "starbucks"},{"IS_DIGIT": True}],
     [{"LOWER": "apple"},{"IS_DIGIT": True}]
     ]
 
-### Example usage
+#### Example usage
 text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
   
 print(classify_vendors(text))  
@@ -32,7 +32,7 @@ print(classify_vendors(text))
 Output: ['Starbucks', 'Apple']
 
 
-# Conclusion
+## Conclusion
 This NLP data scrubber model can be useful for businesses and organizations that need to process large amounts of text data such as credit card transactions, invoices, or transcribed dialog phone conversations. Some examples of businesses that can benefit from this model include:
 
 - Financial institutions (e.g. banks, credit card companies)
