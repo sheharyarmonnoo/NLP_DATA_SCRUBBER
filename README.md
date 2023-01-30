@@ -29,14 +29,14 @@ spacy.load("en_core_web_sm")
 
 #### Defining vendor patterns example (Amazon)
 [  
-    
+        
     {"label":"AMAZON", "pattern": [{"LOWER":"amazoncom"}]},
     {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amazoncom^\d.?\d*.?\d*)"}}]},
-    {"label":"AMAZON", "pattern":  [{"LOWER":"amazoncom"}, {"TEXT":{"REGEX":r"(^amazon.com\d.?\d*.?\d*)"}}] },
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amazoncom"}, {"TEXT":{"REGEX":r"(^amazoncom\d.?\d*.?\d*)"}}] },
     
     {"label":"AMAZON", "pattern": [{"LOWER":"amzncom"}]},
     {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amzncom^\d.?\d*.?\d*)"}}]},
-    {"label":"AMAZON", "pattern":  [{"LOWER":"amzncom"}, {"TEXT":{"REGEX":r"(^amzn.com\d.?\d*.?\d*)"}}] },
+    {"label":"AMAZON", "pattern":  [{"LOWER":"amzncom"}, {"TEXT":{"REGEX":r"(^amzncom\d.?\d*.?\d*)"}}] },
     
     {"label":"AMAZON", "pattern": [{"LOWER":"amzn"}]},
     {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amzn^\d.?\d*.?\d*)"}}]},
@@ -47,9 +47,9 @@ spacy.load("en_core_web_sm")
     {"label":"AMAZON", "pattern":  [{"LOWER":{"REGEX":r"(amazon^\d.?\d*.?\d*)"}}]},
     {"label":"AMAZON", "pattern":  [{"LOWER":"amazon"}, {"TEXT":{"REGEX":r"(^amazon\d.?\d*.?\d*)"}}] }    
     
-]  
+]
 
-
+We user amazoncom over amazon.com in the pattern since we will pre-process the input text to remove special characters 
 
 ## Conclusion
 This NLP data scrubber model can be useful for businesses and organizations that need to process large amounts of text data such as credit card transactions, invoices, or transcribed dialog phone conversations. Some examples of businesses that can benefit from this model include:
