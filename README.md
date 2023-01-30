@@ -11,20 +11,20 @@ spaCy is a popular natural language processing (NLP) library in Python.
 - It has a powerful matching library called the matcher, suitable for classifying vendors from text.
 
 
-# Libraries Used
+### Libraries Used
 spacy  & re (regex)  
 
-# Load the spacy model
+### Load the spacy model
 nlp = spacy.load("en_core_web_sm")
 
-# Defining vendor patterns
+### Defining vendor patterns
 vendor_patterns = [
     [{"LOWER": "amazon"},{"IS_DIGIT": True}],
     [{"LOWER": "starbucks"},{"IS_DIGIT": True}],
     [{"LOWER": "apple"},{"IS_DIGIT": True}]
     ]
 
-# Example usage
+### Example usage
 text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
   
 print(classify_vendors(text))  
