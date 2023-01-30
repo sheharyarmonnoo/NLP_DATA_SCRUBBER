@@ -3,11 +3,11 @@ Introduction
 This is an NLP data scrubber model built using the spacy library to classify vendors from large groups of text such as credit card transactions, invoices, or transcribed dialog phone conversations. The result is derived from using the matcher library in spacy. The text is labeled after preliminary regex to remove special characters, etc.
 
 # Libraries Used
-spacy
-re (regex)
+spacy  
+re (regex)  
 
-import spacy
-import re
+import spacy  
+import re  
 
 # Load the spacy model
 nlp = spacy.load("en_core_web_sm")
@@ -27,17 +27,17 @@ for pattern in vendor_patterns:
 # Define the function to classify the vendors
 def classify_vendors(text):  
     ** Remove special characters  
-    text = re.sub(r'[^\w\s]', '', text)    
+        text = re.sub(r'[^\w\s]', '', text)    
     ** Pass the text to the nlp object  
-    doc = nlp(text)  
+        doc = nlp(text)  
     ** Get the matches  
-    matches = matcher(doc)  
+        matches = matcher(doc)  
     ** Iterate through the matches and get the start and end positions  
-    vendors = []  
-    for match_id, start, end in matches:  
-        span = doc[start:end]  
-        vendors.append(span.text)  
-    return vendors  
+        vendors = []  
+        for match_id, start, end in matches:  
+            span = doc[start:end]  
+            vendors.append(span.text)  
+        return vendors  
 
 # Example usage
 text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
