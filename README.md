@@ -25,23 +25,24 @@ for pattern in vendor_patterns:
     matcher.add("VENDOR", None, pattern)
 
 # Define the function to classify the vendors
-def classify_vendors(text):
-    # Remove special characters
-    text = re.sub(r'[^\w\s]', '', text)
-    # Pass the text to the nlp object
-    doc = nlp(text)
-    # Get the matches
-    matches = matcher(doc)
-    # Iterate through the matches and get the start and end positions
-    vendors = []
-    for match_id, start, end in matches:
-        span = doc[start:end]
-        vendors.append(span.text)
-    return vendors
+def classify_vendors(text):  
+    ** Remove special characters  
+    text = re.sub(r'[^\w\s]', '', text)    
+    ** Pass the text to the nlp object  
+    doc = nlp(text)  
+    ** Get the matches  
+    matches = matcher(doc)  
+    ** Iterate through the matches and get the start and end positions  
+    vendors = []  
+    for match_id, start, end in matches:  
+        span = doc[start:end]  
+        vendors.append(span.text)  
+    return vendors  
 
 # Example usage
-text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"
-print(classify_vendors(text))
+text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
+print(classify_vendors(text))  
+
 # Output: ['Starbucks 123456', 'Apple 654321']
 
 
