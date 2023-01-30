@@ -51,6 +51,6 @@ The model was result of the following steps:
 - Data Preproceesing
 - Manual Annotation
 - Training and Evaluation 
-- Tuning to buisness specfic requirements
+- Tuning to business specfic requirements
 
 Message me to host a live preview of the model in action.
