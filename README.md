@@ -1,49 +1,33 @@
-# NLP Data Scrubber using spacy library
+# NLP Data Scrubber using spaCy library
 Introduction
 This is an NLP data scrubber model built using the spacy library to classify vendors from large groups of text such as credit card transactions, invoices, or transcribed dialog phone conversations. The result is derived from using the matcher library in spacy. The text is labeled after preliminary regex to remove special characters, etc.
 
-# Libraries Used
-spacy  
-re (regex)  
+## Why use spaCy?
 
-import spacy  
-import re  
+spaCy has a powerful matching library called the matcher that can be used to match specific patterns in text, making it suitable for the task of classifying vendors from text. 
+
+. It provides fast and efficient tools for NLP tasks such as tokenization, POS tagging, and NER.
+. It has a powerful matching library called the matcher, suitable for classifying vendors from text.
+. It provides pre-trained models that can be easily loaded and used, reducing the need for extensive data preparation and feature engineering.
+
+# Libraries Used
+spacy  & re (regex)  
 
 # Load the spacy model
 nlp = spacy.load("en_core_web_sm")
 
-# Define the vendor patterns
+# Defining vendor patterns
 vendor_patterns = [
     [{"LOWER": "amazon"},{"IS_DIGIT": True}],
     [{"LOWER": "starbucks"},{"IS_DIGIT": True}],
     [{"LOWER": "apple"},{"IS_DIGIT": True}]
     ]
 
-# Initialize the matcher with the vendor patterns
-matcher = spacy.matcher.Matcher(nlp.vocab)
-for pattern in vendor_patterns:
-    matcher.add("VENDOR", None, pattern)
-
-# Define the function to classify the vendors
-def classify_vendors(text):  
-    ** Remove special characters  
-        text = re.sub(r'[^\w\s]', '', text)    
-    ** Pass the text to the nlp object  
-        doc = nlp(text)  
-    ** Get the matches  
-        matches = matcher(doc)  
-    ** Iterate through the matches and get the start and end positions  
-        vendors = []  
-        for match_id, start, end in matches:  
-            span = doc[start:end]  
-            vendors.append(span.text)  
-        return vendors  
-
 # Example usage
 text = "I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
 print(classify_vendors(text))  
 
-# Output: ['Starbucks 123456', 'Apple 654321']
+# Output: ['Starbucks', 'Apple']
 
 
 Conclusion
