@@ -16,8 +16,7 @@ nlp = spacy.load("en_core_web_sm")
 vendor_patterns = [
     [{"LOWER": "amazon"}, {"IS_DIGIT": True}],
     [{"LOWER": "starbucks"}, {"IS_DIGIT": True}],
-    [{"LOWER": "apple"}, {"IS_DIGIT": True}]
-]
+    [{"LOWER": "apple"}, {"IS_DIGIT": True}]]
 
 # Initialize the matcher with the vendor patterns
 matcher = spacy.matcher.Matcher(nlp.vocab)
