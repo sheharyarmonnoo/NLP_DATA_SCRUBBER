@@ -2,7 +2,7 @@
 Introduction
 This is an NLP data scrubber model built using the spacy library to classify vendors from large groups of text such as credit card transactions, invoices, or transcribed dialog phone conversations. The result is derived from using the matcher library in spacy. The text is labeled after preliminary regex to remove special characters, etc.
 
-Libraries Used
+# Libraries Used
 spacy
 re (regex)
 
