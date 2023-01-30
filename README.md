@@ -29,7 +29,7 @@ spacy.load("en_core_web_sm")
 [[{"LOWER": "amazon"},{"IS_DIGIT": True}], [{"LOWER": "starbucks"},{"IS_DIGIT": True}], [{"LOWER": "apple"},{"IS_DIGIT": True}] ]
 
 #### Example usage
-"I bought a coffee from Starbucks 123456 and an iPhone from Apple 654321"  
+"I bought a coffee from Starbucks on 13th Street and an iPhone from Apple down at Yale and Harvard"  
   
 Output: ['Starbucks', 'Apple']
 
@@ -44,5 +44,13 @@ This NLP data scrubber model can be useful for businesses and organizations that
 - Supply chain management companies
 
 In general, any business that needs to categorize or extract information from large amounts of text data can benefit from this model. 
+
+The model was result of the following steps:
+
+- Data Collection
+- Data Preproceesing
+- Manual Annotation
+- Training and Evaluation 
+- Tuning to buisness specfic requirements
 
 Message me to host a live preview of the model in action.
